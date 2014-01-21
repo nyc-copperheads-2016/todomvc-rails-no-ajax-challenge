@@ -10,6 +10,11 @@ describe TodosController do
       get :index
       expect(assigns(:todos)).to eq Todo.all
     end
+
+    it "assigns @todo to Todo.new" do
+      get :index
+      expect(assigns(:todo)).to be_a_new Todo
+    end
   end
 
   context "#show" do
@@ -24,4 +29,28 @@ describe TodosController do
       expect(assigns(:todo)).to eq todo
     end
   end
+
+  context "#create" do
+    it "with valid attributes" do
+      expect {
+        post :create, :todo => attributes_for(:todo)
+        expect(response).to be_success
+      }.to change { Todo.count }.by(1)
+    end
+
+    it "with invalid attributes" do
+      expect {
+        post :create
+        expect(response.status).to eq 422
+      }.to_not change { Todo.count }
+    end
+    it "with existing title" do
+      todo = create :todo
+      expect {
+        post :create, :todo => { :title => todo.title }
+        expect(response.status).to eq 422
+      }.to_not change { Todo.count }
+    end
+  end
+
 end
