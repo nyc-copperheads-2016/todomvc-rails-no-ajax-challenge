@@ -61,4 +61,31 @@ describe "Todo List", :js => true do
       end
     end
   end
+
+  describe "User can edit a todo list" do
+    context "valid params" do
+      it "updates the todo title" do
+        visit root_path
+        first(:link, 'edit').click
+        within(first('.todo')) do
+          fill_in 'Title', :with => "Work"
+          click_on 'Add'
+        end
+        wait_for_ajax_to_finish
+        expect(page).to have_content "Work"
+      end
+    end
+    context "invalid params" do
+      it "blank title" do
+        visit root_path
+        first(:link, 'edit').click
+        within(first('.todo')) do
+          fill_in 'Title', :with => ""
+          click_on 'Add'
+        end
+        wait_for_ajax_to_finish
+        expect(page).to have_content "Title can't be blank"
+      end
+    end
+  end
 end

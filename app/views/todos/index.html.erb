@@ -1,10 +1,6 @@
 <div class="todo-form">
   <div class="errors"></div>
-  <%= form_for @todo, :remote => true do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.submit "Add" %>
-  <% end %>
+  <%= render 'form', :todo => @todo %>
 </div>
 <ul class="todos">
   <% @todos.each do |todo| %>

@@ -53,4 +53,32 @@ describe TodosController do
     end
   end
 
+  context "#edit" do
+    let(:todo) { create :todo }
+    it "is successful" do
+      get :edit, :id => todo.id
+      expect(response).to be_success
+    end
+
+    it "assigns @todo to todo" do
+      get :edit, :id => todo.id
+      expect(assigns(:todo)).to eq todo
+    end
+  end
+
+  context "#update" do
+    let(:todo) { create :todo }
+    it "with valid attributes" do
+      expect {
+        put :update, :id => todo.id, :todo => { :title => "Work" }
+        expect(response).to be_success
+      }.to change { todo.reload.title }.from(todo.title).to("Work")
+    end
+    it "with invalid attributes" do
+      expect {
+        put :update, :id => todo.id, :todo => { :title => '' }
+        expect(response.status).to eq 422
+      }.to_not change { todo.reload.title }
+    end
+  end
 end

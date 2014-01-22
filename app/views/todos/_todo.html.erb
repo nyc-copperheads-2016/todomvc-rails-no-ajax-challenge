@@ -1,1 +1,4 @@
-<li class="todo"><%= link_to todo.title, todo %></li>
+<li class="todo">
+  <%= link_to todo.title, todo %>
+  <span><%= link_to "edit", edit_todo_path(todo), :remote => true, :class => 'edit'  %></span>
+</li>
