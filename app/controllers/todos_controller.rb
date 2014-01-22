@@ -40,6 +40,9 @@ class TodosController < ApplicationController
   private
   def todos_params
     params.require(:todo).permit(:title)
+
+  def load_todo
+    @todo = Todo.find params[:id]
   end
 
   def load_todo

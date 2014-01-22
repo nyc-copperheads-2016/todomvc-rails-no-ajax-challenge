@@ -53,7 +53,6 @@ describe TodosController do
   end
 
   context "#edit" do
-    let(:todo) { create :todo }
     it "is successful" do
       get :edit, :id => todo.id
       expect(response).to be_success
@@ -66,7 +65,6 @@ describe TodosController do
   end
 
   context "#update" do
-    let(:todo) { create :todo }
     it "with valid attributes" do
       expect {
         put :update, :id => todo.id, :todo => { :title => "Work" }
@@ -78,6 +76,19 @@ describe TodosController do
         put :update, :id => todo.id, :todo => { :title => '' }
         expect(response.status).to eq 422
       }.to_not change { todo.reload.title }
+    end
+  end
+
+  context "#destroy" do
+    it "is successful" do
+      delete :destroy, :id => todo.id
+      expect(response).to be_success
+    end
+
+    it "destroys the todo" do
+      expect {
+        delete :destroy, :id => todo.id
+      }.to change { Todo.count }.by(-1)
     end
   end
 end
