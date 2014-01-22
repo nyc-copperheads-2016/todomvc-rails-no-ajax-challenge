@@ -41,7 +41,7 @@ Remember always start in this order: feature, controller, model. Each feature is
   - when I leave the form blank
   - I can see the error: "Body can't be blank"
 
-##What's you'll implement:
+##What you'll implement:
   - user can mark a task as complete
   - user can mark a complete task as incomplete
   - user can edit a task
