@@ -1,4 +1,6 @@
 ChallengeTodomvcRails::Application.routes.draw do
   root :to => 'todos#index'
-  resources :todos
+  resources :todos do
+    resources :tasks, :only => [:create]
+  end
 end

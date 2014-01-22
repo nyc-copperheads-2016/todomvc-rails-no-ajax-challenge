@@ -7,6 +7,7 @@ class TodosController < ApplicationController
   end
 
   def show
+    @task = Task.new
   end
 
   def create
@@ -14,7 +15,7 @@ class TodosController < ApplicationController
     if @todo.save
       render :partial => 'todo', :locals => { :todo => @todo }
     else
-      render :text => @todo.errors.full_messages.join(', '), :status => :unprocessable_entity
+      render :partial => 'shared/errors', :locals => { :object => @todo }, :status => :unprocessable_entity
     end
   end
 
@@ -26,7 +27,7 @@ class TodosController < ApplicationController
     if @todo.update_attributes params[:todo]
       render :partial => 'todo', :locals => { :todo => @todo }
     else
-      render :text => @todo.errors.full_messages.join(', '), :status => :unprocessable_entity
+      render :partial => 'shared/errors', :locals => { :object => @todo }, :status => :unprocessable_entity
     end
   end
 

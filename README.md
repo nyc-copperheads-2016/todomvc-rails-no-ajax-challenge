@@ -44,4 +44,5 @@ Remember always start in this order: feature, controller, model. Each feature is
 ##What's you'll implement:
   - user can mark a task as complete
   - user can mark a complete task as incomplete
+  - user can edit a task
   - user can delete a task
