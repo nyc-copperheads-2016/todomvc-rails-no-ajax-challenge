@@ -2,6 +2,7 @@ var Todo = {
   els: {
     todoList: '.todos',
     todoEdit: '.todo a.edit',
+    todoDelete: '.todo a.delete',
     todoForm: '.todo-form form',
     editForm: '.edit_todo',
     errors: '.todo-form .errors'
@@ -13,7 +14,9 @@ var Todo = {
     $(this.els.todoForm).on('ajax:error', function(e, data) { self.appendErrors(data); });
     $(this.els.todoList).on('ajax:success', this.els.todoEdit, this.showEditForm);
     $(this.els.todoList).on('ajax:success', this.els.editForm, this.updateTodo);
-    $(this.els.todoList).on('ajax:error', function(e, data) { self.appendErrors(data); })
+    $(this.els.todoList).on('ajax:error', function(e, data) { self.appendErrors(data); });
+    $(this.els.todoList).on('ajax:success', this.els.todoDelete, this.removeTodo);
+
   },
 
   appendTodo: function(data) {
@@ -36,6 +39,10 @@ var Todo = {
 
   updateTodo: function(e, data) {
     $(this).parents('.todo').html(data)
+  },
+
+  removeTodo: function() {
+    $(this).parents('.todo').remove();
   }
 }
 

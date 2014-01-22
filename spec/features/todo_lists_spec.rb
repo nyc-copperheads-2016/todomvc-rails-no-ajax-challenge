@@ -88,4 +88,12 @@ describe "Todo List", :js => true do
       end
     end
   end
+
+  describe "User can delete a Todo list" do
+    it "removes the todo title from the list" do
+      visit root_path
+      first(:link, 'delete').click
+      expect(page).to_not have_content todo.title
+    end
+  end
 end
