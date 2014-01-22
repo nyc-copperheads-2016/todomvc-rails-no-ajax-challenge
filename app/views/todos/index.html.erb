@@ -1,9 +1,11 @@
-<div class="todo-form">
-  <div class="errors"></div>
-  <%= render 'form', :todo => @todo %>
+<div class="todo-container">
+  <div class="todo-form">
+    <div class="errors"></div>
+    <%= render 'form', :todo => @todo %>
+  </div>
+  <ul class="todos">
+    <% @todos.each do |todo| %>
+      <%= render 'todo', :todo => todo %>
+    <% end %>
+  </ul>
 </div>
-<ul class="todos">
-  <% @todos.each do |todo| %>
-    <%= render 'todo', :todo => todo %>
-  <% end %>
-</ul>

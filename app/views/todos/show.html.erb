@@ -1,10 +1,12 @@
-<h1><%= @todo.title %></h1>
-<div class="task-form">
-  <div class="errors"></div>
-  <%= render 'tasks/form', :task => @task, :todo => @todo %>
+<div class="task-container">
+  <h1><%= @todo.title %></h1>
+  <div class="task-form">
+    <div class="errors"></div>
+    <%= render 'tasks/form', :task => @task, :todo => @todo %>
+  </div>
+  <ul class="tasks">
+    <% @todo.tasks.each do |task| %>
+      <%= render 'task', :task => task %>
+    <% end %>
+  </ul>
 </div>
-<ul class="tasks">
-  <% @todo.tasks.each do |task| %>
-    <%= render 'task', :task => task %>
-  <% end %>
-</ul>
