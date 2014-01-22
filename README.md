@@ -12,6 +12,7 @@ Each step will build the previous step's "what you'll be implementing" section. 
   - Start with a plan: write your own Readme that outlines what you're about todo and the steps you'll take to meet your objectives. Please don't skip this, the format is irrelevant, choose something that makes sense to you and stick to it.
   - Implement your solutions as outlined in your Readme.
   - 1000.times { puts "please don't copy and paste"}, the purpose of this challenge is for you to get inspired by an example and go and implement your own. Make mistakes, get confused and most importantly ask lots of questions. Keep the "What's been implemented" section as a reference.
+  - FYI: all of my work/solutions have been BDDed, not a single line of code in this project was written without a test first. The approach I outlined above, is the one I usually follow in my work as an engineer.
 
 ## [Todo] Before you start:
   - What's behavior driven development
