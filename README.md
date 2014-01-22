@@ -31,6 +31,6 @@ Remember always start in this order: feature, controller, model. Each feature is
 
 
 
-##What's you'll implement:
+##What you'll implement:
   - user can edit a todo list
   - user can delete a todo list
