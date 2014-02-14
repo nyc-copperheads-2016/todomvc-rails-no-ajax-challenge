@@ -14,7 +14,7 @@ Each step will build the previous step's "what you'll be implementing" section. 
   - 1000.times { puts "please don't copy and paste"}, the purpose of this challenge is for you to get inspired by an example and go and implement your own. Make mistakes, get confused and most importantly ask lots of questions. Keep the "What's been implemented" section as a reference.
   - FYI: all of my work/solutions have been BDDed, not a single line of code in this project was written without a test first. The approach I outlined above, is the one I usually follow in my work as an engineer.
 
-## [Todo] Before you start:
-  - What's behavior driven development
+## Before you start:
+  - What's behavior driven development?
   - Understand the Red, Green, Refactor cycle
   - We test outside in.
