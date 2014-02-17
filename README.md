@@ -1,6 +1,10 @@
 # TODO MVC on Rails Challenge
+## Learning Competencies
+- Understand the red-green-refactor development cycle
+- TDD/BDD your way through a simple app
+- Comfortable with not writing a signle line of code without writing the test first
 ## Objective:
-BDD your way to building a Todo app with Rails. This will happen through a series of steps. This Readme will change with each step explaining the objective of the step, what's been implemented and what you'll be implementing.
+TDD your way to building a Todo app with Rails. This will happen through a series of steps. This Readme will change with each step explaining the objective of the step, what's been implemented and what you'll be implementing.
 
 Each step will build the previous step's "what you'll be implementing" section. This will allow you to compare your solution with mine.
 
