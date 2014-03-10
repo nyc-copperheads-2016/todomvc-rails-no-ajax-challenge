@@ -61,11 +61,8 @@ describe "Todo List" do
       it "updates the todo title" do
         visit root_path
         first(:link, 'edit').click
-        within(first('.todo')) do
-          fill_in 'Title', :with => "Work"
-          click_on 'Add'
-        end
-        wait_for_ajax_to_finish
+        fill_in 'Title', :with => "Work"
+        click_on 'Add'
         expect(page).to have_content "Work"
       end
     end
@@ -73,11 +70,8 @@ describe "Todo List" do
       it "blank title" do
         visit root_path
         first(:link, 'edit').click
-        within(first('.todo')) do
-          fill_in 'Title', :with => ""
-          click_on 'Add'
-        end
-        wait_for_ajax_to_finish
+        fill_in 'Title', :with => ""
+        click_on 'Add'
         expect(page).to have_content "Title can't be blank"
       end
     end
