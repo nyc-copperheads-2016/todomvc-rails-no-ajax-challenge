@@ -11,9 +11,10 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new params[:todo]
     if @todo.save
-      render :partial => 'todo', :locals => { :todo => @todo }
+      redirect_to root_path
     else
-      render :text => @todo.errors.full_messages.join(', '), :status => :unprocessable_entity
+      @todos = Todo.all
+      render :index
     end
   end
 end

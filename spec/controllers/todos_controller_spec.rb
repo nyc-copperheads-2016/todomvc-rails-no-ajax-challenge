@@ -34,21 +34,21 @@ describe TodosController do
     it "with valid attributes" do
       expect {
         post :create, :todo => attributes_for(:todo)
-        expect(response).to be_success
+        expect(response).to be_redirect
       }.to change { Todo.count }.by(1)
     end
 
     it "with invalid attributes" do
       expect {
         post :create
-        expect(response.status).to eq 422
+        expect(response).to_not be_redirect
       }.to_not change { Todo.count }
     end
     it "with existing title" do
       todo = create :todo
       expect {
         post :create, :todo => { :title => todo.title }
-        expect(response.status).to eq 422
+        expect(response).to_not be_redirect
       }.to_not change { Todo.count }
     end
   end

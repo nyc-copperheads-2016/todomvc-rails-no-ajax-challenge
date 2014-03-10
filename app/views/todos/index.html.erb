@@ -1,6 +1,7 @@
 <div class="todo-form">
   <div class="errors"></div>
-  <%= form_for @todo, :remote => true do |f| %>
+  <%= render 'shared/form_errors', :object => @todo %>
+  <%= form_for @todo do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <%= f.submit "Add" %>
