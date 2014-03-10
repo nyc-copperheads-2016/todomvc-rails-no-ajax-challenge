@@ -13,27 +13,27 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new params[:todo]
     if @todo.save
-      render :partial => 'todo', :locals => { :todo => @todo }
+      redirect_to root_path
     else
-      render :partial => 'shared/errors', :locals => { :object => @todo }, :status => :unprocessable_entity
+      @todos = Todo.all
+      render :index
     end
   end
 
   def edit
-    render :partial => 'form', :locals => { :todo => @todo }
   end
 
   def update
     if @todo.update_attributes params[:todo]
-      render :partial => 'todo', :locals => { :todo => @todo }
+      redirect_to @todo
     else
-      render :partial => 'shared/errors', :locals => { :object => @todo }, :status => :unprocessable_entity
+      render :edit
     end
   end
 
   def destroy
     @todo.destroy
-    render :text => {}
+    redirect_to root_path
   end
 
   private

@@ -27,7 +27,6 @@ describe "Todo List", :js => true do
         visit root_path
         fill_in "Title", :with => "Work"
         click_on "Add"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Work"
       end
     end
@@ -36,14 +35,12 @@ describe "Todo List", :js => true do
         visit root_path
         fill_in "Title", :with => todo.title
         click_on "Add"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Title has already been taken"
       end
       it "blank title" do
         visit root_path
         fill_in "Title", :with => nil
         click_on "Add"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Title can't be blank"
       end
 
@@ -51,11 +48,9 @@ describe "Todo List", :js => true do
         visit root_path
         fill_in "Title", :with => nil
         click_on "Add"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Title can't be blank"
         fill_in "Title", :with => "Work"
         click_on "Add"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Work"
         expect(page).to_not have_content "Title can't be blank"
       end
@@ -67,11 +62,8 @@ describe "Todo List", :js => true do
       it "updates the todo title" do
         visit root_path
         first(:link, 'edit').click
-        within(first('.todo')) do
-          fill_in 'Title', :with => "Work"
-          click_on 'Add'
-        end
-        wait_for_ajax_to_finish
+        fill_in 'Title', :with => "Work"
+        click_on 'Add'
         expect(page).to have_content "Work"
       end
     end
@@ -79,11 +71,8 @@ describe "Todo List", :js => true do
       it "blank title" do
         visit root_path
         first(:link, 'edit').click
-        within(first('.todo')) do
-          fill_in 'Title', :with => ""
-          click_on 'Add'
-        end
-        wait_for_ajax_to_finish
+        fill_in 'Title', :with => ""
+        click_on 'Add'
         expect(page).to have_content "Title can't be blank"
       end
     end

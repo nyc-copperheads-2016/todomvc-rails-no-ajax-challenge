@@ -46,5 +46,3 @@ Remember always start in this order: feature, controller, model. Each feature is
   - user can mark a complete task as incomplete
   - user can edit a task
   - user can delete a task
-  - bonus for awesomeness: make it a one page app:
-    when you click on a todo list title, it shows the tasks and task form below it.

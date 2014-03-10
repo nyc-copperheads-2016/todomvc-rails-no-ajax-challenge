@@ -1,6 +1,6 @@
 <div class="todo-container">
   <div class="todo-form">
-    <div class="errors"></div>
+    <%= render 'shared/form_errors', :object => @todo %>
     <%= render 'form', :todo => @todo %>
   </div>
   <ul class="todos">

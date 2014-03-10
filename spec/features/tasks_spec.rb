@@ -14,7 +14,6 @@ describe "Tasks", :js => true do
         visit todo_path(todo)
         fill_in "Body", :with => "clean house"
         click_on "Create Task"
-        wait_for_ajax_to_finish
         expect(page).to have_content "clean house"
       end
     end
@@ -23,7 +22,6 @@ describe "Tasks", :js => true do
         visit todo_path(todo)
         fill_in "Body", :with => nil
         click_on "Create Task"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Body can't be blank"
       end
 
@@ -31,11 +29,9 @@ describe "Tasks", :js => true do
         visit todo_path(todo)
         fill_in "Body", :with => nil
         click_on "Create Task"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Body can't be blank"
         fill_in "Body", :with => "Work"
         click_on "Create Task"
-        wait_for_ajax_to_finish
         expect(page).to have_content "Work"
         expect(page).to_not have_content "Body can't be blank"
       end

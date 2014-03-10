@@ -3,9 +3,9 @@ class TasksController < ApplicationController
   def create
     @task = @todo.tasks.build params[:task]
     if @task.save
-      render :partial => 'todos/task', :locals => { :task => @task }
+      redirect_to @todo
     else
-      render :partial => 'shared/errors', :locals => { :object => @task }, :status => :unprocessable_entity
+      render 'todos/show'
     end
   end
 
