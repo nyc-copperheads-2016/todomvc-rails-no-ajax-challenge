@@ -4,11 +4,16 @@
 - TDD/BDD your way through a simple app
 - Comfortable with not writing a signle line of code without writing the test first
 ## Objective:
-TDD your way to building a Todo app with Rails. This will happen through a series of steps. This Readme will change with each step explaining the objective of the step, what's been implemented and what you'll be implementing.
+TDD your way to building a Todo app with Rails. This will happen through a series of steps (in the form of branches). This Readme will change with each step explaining the objective of the step, what's been implemented and what you'll be implementing.
 
 Each step will build the previous step's "what you'll be implementing" section. This will allow you to compare your solution with mine.
 
 ## Your approach:
+- Check into a step branch, here are the steps
+  step_1_create_a_list
+  step_2_create_tasks
+  step_3_single_page
+
 - Read the Readme.
 - Review your solution of your previous step against our solution.
 - Follow the instructions on how to run the "what's been implemented" section. Inspect, study and ask lots of questions about what's been implemented.
@@ -21,4 +26,4 @@ Each step will build the previous step's "what you'll be implementing" section. 
 ## Before you start:
   - What's behavior driven development?
   - Understand the Red, Green, Refactor cycle
-  - We test outside in.
+  - We test outside in
