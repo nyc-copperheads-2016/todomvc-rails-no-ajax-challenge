@@ -18,6 +18,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'capybara-webkit'
 end
 
 gem 'jquery-rails'
