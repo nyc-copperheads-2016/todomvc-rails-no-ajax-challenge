@@ -48,7 +48,7 @@ describe TodosController do
       todo = create :todo
       expect {
         post :create, :todo => { :title => todo.title }
-        expect(response).to render_template(:index)
+        expect(response).to render_template(:edit)
       }.to_not change { Todo.count }
     end
   end

@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe "Tasks", :js => true do
+describe "Tasks" do
   let!(:task) { create :task }
   let(:todo) { task.todo }
   describe "User can see todo tasks" do
