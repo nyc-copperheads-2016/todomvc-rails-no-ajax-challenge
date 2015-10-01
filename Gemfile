@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails'
 gem 'pg'
 
 group :assets do
@@ -16,9 +16,9 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  #gem 'selenium-webdriver'
   gem 'database_cleaner'
-  gem 'capybara-webkit'
+  #gem 'capybara-webkit'
 end
 
 gem 'jquery-rails'
