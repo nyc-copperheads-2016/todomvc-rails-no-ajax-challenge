@@ -1,4 +1,3 @@
-require 'spec_helper'
 describe TodosController do
   context "#index" do
     it "is successful" do
@@ -40,7 +39,7 @@ describe TodosController do
 
     it "with invalid attributes" do
       expect {
-        post :create
+        post :create, todo: { title: nil }
         expect(response).to_not be_redirect
       }.to_not change { Todo.count }
     end

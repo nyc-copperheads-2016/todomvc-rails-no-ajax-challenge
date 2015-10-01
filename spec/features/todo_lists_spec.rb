@@ -1,5 +1,4 @@
-require 'spec_helper'
-describe "Todo List", :js => true do
+describe "Todo List" do
   let!(:todo) { create :todo }
   let!(:todos) { [todo, create(:todo)] }
   describe "User can see a all todo lists" do
