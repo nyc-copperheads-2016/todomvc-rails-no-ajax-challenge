@@ -1,4 +1,4 @@
-ChallengeTodomvcRails::Application.routes.draw do
+Rails.application.routes.draw do
   root :to => 'todos#index'
   resources :todos do
     resources :tasks, :only => [:create]
