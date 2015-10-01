@@ -11,7 +11,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new params[:todo]
+    @todo = Todo.new todos_params
     if @todo.save
       redirect_to root_path
     else
@@ -37,6 +37,10 @@ class TodosController < ApplicationController
   end
 
   private
+  def todos_params
+    params.require(:todo).permit(:title)
+  end
+
   def load_todo
     @todo = Todo.find params[:id]
   end

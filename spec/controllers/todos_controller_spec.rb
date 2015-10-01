@@ -1,4 +1,3 @@
-require 'spec_helper'
 describe TodosController do
   let!(:todo) { create :todo }
   context "#index" do
