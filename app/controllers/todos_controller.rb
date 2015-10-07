@@ -23,7 +23,7 @@ class TodosController < ApplicationController
   end
 
   def update
-    if @todo.update_attributes params[:todo]
+    if @todo.update_attributes todos_params
       redirect_to @todo
     else
       flash[:alert] =  @todo.errors.full_messages.join(', ')

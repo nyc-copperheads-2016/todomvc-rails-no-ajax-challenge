@@ -39,8 +39,8 @@ describe TodosController do
 
     it "with invalid attributes" do
       expect {
-        post :create
-        expect(response).to render_template(:index)
+        post :create, todo: { title: nil }
+        expect(response).to render_template(:edit)
       }.to_not change { Todo.count }
     end
 
